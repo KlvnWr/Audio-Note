@@ -1,4 +1,12 @@
 import logo from "./assets/Logo.svg";
+import { NewCard } from "./components/new-card";
+import { NoteCard } from "./components/note-card";
+
+const note = {
+  date: new Date(),
+  content: 'Hello World'
+
+}
 
 export function App() {
   return (
@@ -14,9 +22,10 @@ export function App() {
 
       <div className="h-px bg-slate-700"/>
 
-      <div className="grid grid-cols-3 auto-rows-[250px]">
-        <div className="bg-slate-50"></div>
+      <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
+        <NewCard />
+        <NoteCard note={note}/>
       </div>
-</div>
+    </div>
   )
 }
